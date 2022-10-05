@@ -1,0 +1,6 @@
+#ddev-generated
+[git_status]
+# Disabling git_status to make it faster and likely not very useful on ddev
+# You can edit this file and remove #ddev-generated from the first line OR you
+# can add STARSHIP_CONFIG with reference to a different file.
+disabled=true
