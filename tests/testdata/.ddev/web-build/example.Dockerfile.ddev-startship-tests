@@ -1,0 +1,5 @@
+# Different approaches to setting env var to home directories
+# For now using .bashrc.d
+
+# ENV STARSHIP_CONFIG=/home/$username/.config/starship.tests.toml
+# RUN echo "export STARSHIP_CONFIG=~/.config/starship.tests.toml" >> /etc/profile

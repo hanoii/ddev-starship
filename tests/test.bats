@@ -7,7 +7,7 @@ setup() {
   export DDEV_NON_INTERACTIVE=true
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
   cd "${TESTDIR}"
-  ddev config --project-name=${PROJNAME} --web-environment="STARSHIP_CONFIG=/var/www/html/.ddev/homeadditions/.config/starship.tests.toml"
+  ddev config --project-name=${PROJNAME}
   rsync -av $DIR/tests/testdata/ "${TESTDIR}"
   brew_prefix=$(brew --prefix)
   load "${brew_prefix}/lib/bats-support/load.bash"
