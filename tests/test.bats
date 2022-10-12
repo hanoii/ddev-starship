@@ -32,12 +32,12 @@ teardown() {
   assert_output --partial 'ddev-starship-test'
 }
 
-#@test "install from release" {
-#  set -eu -o pipefail
-#  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-#  echo "# ddev get drud/ddev-starship with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-#  ddev get drud/ddev-starship
-#  ddev restart >/dev/null
-#  # Do something useful here that verifies the add-on
-#  # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-#}
+@test "install from release" {
+  set -eu -o pipefail
+  cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
+  echo "# ddev get drud/ddev-starship with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+  ddev get hanoii/ddev-starship
+  ddev restart >/dev/null
+  run bash -c 'echo "" | ddev exec "bash -i"'
+  assert_output --partial 'ddev-starship-test'
+}
